@@ -90,12 +90,19 @@ export function Home() {
                     <div style={{ fontFamily: 'var(--font-heading)', fontSize: 21, lineHeight: 1.15 }}>{c.nome}</div>
                     <div style={{ fontSize: 14, color: 'var(--color-neutral-700)', marginTop: 2 }}>{c.sub}</div>
                   </div>
-                  <img
-                    src={c.ist ? '/assets/icons/protege-ist.svg' : '/assets/icons/nao-protege-ist.svg'}
-                    alt={c.ist ? 'Protege contra IST' : 'Não protege contra IST'}
-                    title={c.ist ? 'Protege contra IST' : 'Não protege contra IST'}
-                    style={{ width: 36, height: 36, flex: 'none' }}
-                  />
+                  <span
+                    className="tt tt-left"
+                    data-tt={c.ist ? 'Protege contra IST' : 'Não protege contra IST'}
+                    tabIndex={0}
+                    aria-label={c.ist ? 'Protege contra IST' : 'Não protege contra IST'}
+                    style={{ flex: 'none' }}
+                  >
+                    <img
+                      src={c.ist ? '/assets/icons/protege-ist.svg' : '/assets/icons/nao-protege-ist.svg'}
+                      alt=""
+                      style={{ width: 36, height: 36 }}
+                    />
+                  </span>
                 </div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 'auto', paddingTop: 8 }}>
                   <span className="tag tag-neutral" style={{ fontSize: 12 }}>{c.hormonio}</span>
